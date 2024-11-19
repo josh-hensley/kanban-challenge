@@ -5,6 +5,14 @@ import bcrypt from 'bcrypt';
 
 export const login = async (req: Request, res: Response) => {
   // TODO: If the user exists and the password is correct, return a JWT token
+  try {
+    const data = await req.body;
+    
+    res.json(data);
+  } 
+  catch (error) {
+    console.error(error)
+  }
 };
 
 const router = Router();
