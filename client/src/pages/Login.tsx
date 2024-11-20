@@ -4,6 +4,7 @@ import Auth from '../utils/auth';
 import { login } from "../api/authAPI";
 
 const Login = () => {
+  const [errorText, setErrorText] = useState('');
   const [loginData, setLoginData] = useState({
     username: '',
     password: ''
@@ -22,8 +23,12 @@ const Login = () => {
     try {
       const data = await login(loginData);
       Auth.login(data.token);
-    } catch (err) {
-      console.error('Failed to login', err);
+      if (!data.ok){
+        throw new Error('Invalid login credentials');
+      }
+    } catch (error) {
+      setErrorText(`${error}`);
+      console.error('Failed to login', error);
     }
   };
 
@@ -46,6 +51,7 @@ const Login = () => {
           onChange={handleChange}
         />
         <button type='submit'>Submit Form</button>
+        <p id="error">{ errorText || ""}</p>
       </form>
     </div>
     
