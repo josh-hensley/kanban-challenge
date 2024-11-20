@@ -4,7 +4,7 @@
 
 ## Description
 
-Describe your application
+Krazy Kanban Board is a secure private Kanban Board full-stack web application to help organize and plan your next project!
 
 ## Table of Contents
 
@@ -19,11 +19,17 @@ Describe your application
 
 ## <a name="Installation"></a>Installation
 
-Explain how to install.
+Here's a link to the [Deployed App](https://kanban-challenge.onrender.com/), no installation required.  
+
+To install locally:  This app requires [Node.js](https://nodejs.org/en/download/prebuilt-installer) and [postgreSQL](https://www.postgresql.org/download/).  From the root directory, run `npm i` to install dependencies.  Then run `npm run build` to compile typescript and create server and client dist folders.  Then open postgreSQL from the commandline with `psql -U postgres`, enter your password and run `\i server/db/schema.sql` to create database. `\q` to quit postgreSQL. Run `mv server/.env.EXAMPLE server/.env`, then open the .env file and fill in the environment variables (the JWT can be anything).
 
 ## <a name="Usage"></a>Usage
 
-Explain how to use.
+![Screengrab of Krazy Kanban Board App](image.png)
+
+Here's a link to the [Deployed App](https://kanban-challenge.onrender.com/)
+
+To use locally:  from the root directory, run `npm run start` to seed example data and serve on localhost:3001.  Use login "JollyGuru" and password "password" to log in. Navigate the UI to create new tickets, edit them, and delete them.
 
 ## <a name="license"></a>License
 
@@ -35,7 +41,7 @@ If you wish to contribute, please follow these [guidelines](https://www.contribu
 
 ## <a name="tests"></a>Tests
 
-Tests go in here.
+Locally:  To work in a developement environment using nodemon, run `npm run start:dev`.  The page will refresh when changes are made.
 
 ## <a name="questions"></a>Questions
 
